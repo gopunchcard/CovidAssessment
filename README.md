@@ -1,4 +1,4 @@
-[![Build Status](https://punchcard.visualstudio.com/AHS%20-%20CovidAssessment/_apis/build/status/AHS%20-%20CovidAssessment/AHS%20-%20CovidAssessment%20CI?branchName=master)](https://punchcard.visualstudio.com/AHS%20-%20CovidAssessment/_build/latest?definitionId=32&branchName=master)
+
 
 ## What is the COVID-19 Assessment Framework
 The covid assessment framework provides a web site, android app and iOS app to do simple covid pre-screening assessments. The screening is driven by a simple JSON document which allows fast updates and keeps all the applications in sync.
