@@ -1,0 +1,30 @@
+.m-signature-pad {
+  user-select: none;
+}
+
+.m-signature-pad--body {
+  position: relative;
+  height: 400px;
+  border: 1px solid $input-border-color;
+
+  .form-validation-error & {
+    border-color: theme-color(danger);
+  }
+}
+
+.m-signature-pad--body canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.m-signature-pad--footer {
+  margin-top: $grid-gutter-width / 4;
+
+  .btn-default {
+    @extend .btn-outline-secondary;
+    @extend [class*='btn-outline-'];
+  }
+}

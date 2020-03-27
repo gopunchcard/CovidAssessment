@@ -1,0 +1,92 @@
+.modal {
+  display: block;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    background-color: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
+    transition: opacity $transition-duration-base $transition-bezier;
+  }
+
+  &-header {
+    padding: ($modal-inner-padding / 2) $modal-inner-padding;
+  }
+
+  &-title {
+    margin: 0;
+  }
+
+  &-content {
+    border: 0;
+    box-shadow: $card-shadow-base;
+  }
+
+  &-footer {
+    padding-top: 0;
+    border-top: 0;
+
+    @include media-breakpoint-down(md) {
+      flex-wrap: wrap;
+
+      .btn {
+        width: 100%;
+        margin: $spacer / 4 0;
+      }
+
+      .btn-primary {
+        order: -1;
+      }
+    }
+  }
+
+  &-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 2rem;
+    line-height: 1;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &.show:not(.hide) {
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.modal.fade {
+  .modal-dialog {
+    transition: all $transition-duration-base $transition-bezier;
+  }
+
+  &.hide {
+    .modal-dialog {
+      opacity: 0;
+      transform: translate(0, -25%);
+    }
+  }
+}
+
+.ReactModal__Overlay {
+  z-index: $zindex-modal !important;
+
+  .ril-outer {
+    background-color: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
+  }
+}

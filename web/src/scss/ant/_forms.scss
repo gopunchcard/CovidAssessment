@@ -1,0 +1,686 @@
+//================================================
+//
+// Ant Design Forms
+//
+//================================================
+
+//------------------------------------------------
+// Form scaffolding
+//------------------------------------------------
+
+.ant-form {
+	@extend %font-reset;
+
+	label {
+		@extend %font-reset;
+		&:not(.ant-radio-wrapper) {
+			font-weight: bold;
+		}
+	}
+}
+
+.ant-form-item {
+	@extend .form-group;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	margin-bottom: 0;
+}
+
+.ant-form-item-control {
+	line-height: inherit;
+}
+
+.ant-form-item-label {
+	overflow: initial;
+	text-align: left;
+	line-height: inherit;
+	white-space: normal;
+
+	label::after {
+		display: none; // Do not include the default colon
+	}
+}
+
+.ant-form-item-children {
+	display: flex;
+	flex-direction: row;
+}
+
+//------------------------------------------------
+// General input scaffolding
+//------------------------------------------------
+
+.ant-input,
+.ant-input-number,
+.ant-select-selection,
+.ant-upload,
+.ant-input-group.ant-input-group-compact > .ant-select:first-child > .ant-select-selection,
+.ant-input-group.ant-input-group-compact > .ant-select:last-child > .ant-select-selection,
+.ant-select-auto-complete.ant-select .ant-input {
+	@extend .form-control;
+	font-family: inherit;
+	display: flex;
+	flex: 1;
+
+	&:hover {
+		border-color: $input-focus-border-color;
+	}
+
+	&:active {
+		@extend .form-control:focus;
+	}
+
+	&[class*="-disabled"]:focus,
+	&[class*="-disabled"]:active,
+	&[class*="-disabled"]:hover {
+		@extend .form-control:disabled;
+		border-color: $input-border-color !important;
+		background-color: inherit !important;
+		box-shadow: none;
+		cursor: not-allowed;
+
+	}
+}
+
+.ant-input-number-input-wrap {
+	width: 100%;
+}
+
+.ant-input-number-disabled{
+	@extend .form-control:disabled;
+	cursor: not-allowed;
+}
+
+.ant-form-item-control:not(.has-feedback) {
+	padding-right: 28px;
+}
+
+.ant-upload.ant-upload-select-picture-card:hover:not(.ant-upload-disabled) {
+	border-color: $primary
+}
+.ant-calendar-picker:not(.has-feedback) > div {
+	position: relative;
+}
+
+.has-feedback .ant-form-item-children-icon {
+	position: unset !important;
+	margin-top: 0 !important;
+	padding-left: $spacer;
+	width: auto !important;
+
+	.anticon {
+		height: $input-height;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.anticon svg {
+		position: unset !important;
+	}
+}
+
+.anticon svg {
+	width: 1rem;
+	height: 1rem;
+}
+
+[ant-click-animating-without-extra-node='true']::after,
+.ant-click-animating-node {
+	border-color: $component-active-bg;
+}
+
+//------------------------------------------------
+// Autocomplete
+//------------------------------------------------
+
+.ant-select-auto-complete.ant-select .ant-select-selection {
+	height: $input-height;
+	padding: 0;
+}
+
+//------------------------------------------------
+// Calendar
+//------------------------------------------------
+
+.ant-calendar,
+.ant-calendar-picker,
+.ant-calendar-picker-container {
+	@extend %font-reset;
+}
+
+.ant-calendar-picker:focus .ant-calendar-picker-input:not(.ant-input-disabled) {
+	@extend .form-control:focus;
+}
+
+.ant-calendar-picker {
+	display: block;
+	width: 100% !important;
+}
+
+.ant-calendar-date {
+	width: $ant-calendar-date-size;
+	height: $ant-calendar-date-size;
+	line-height: $ant-calendar-date-size;
+
+	&:hover {
+		background: $ant-calendar-date-hover-bg;
+	}
+
+	&:active {
+		background: $ant-calendar-date-active-bg;
+	}
+}
+
+.ant-calendar-today .ant-calendar-date {
+	border-color: $ant-calendar-date-today-border;
+	color: $ant-calendar-date-today-color;
+}
+
+.ant-calendar-selected-day,
+.ant-calendar-selected-date {
+	.ant-calendar-date {
+		background: $ant-calendar-date-active-bg;
+		color: $ant-calendar-date-active-color;
+
+		&:hover {
+			background: darken($ant-calendar-date-active-bg, $theme-color-interval);
+		}
+	}
+}
+
+.ant-calendar .ant-calendar-ok-btn {
+	@extend .btn;
+	@extend .btn-sm;
+	@extend .btn-primary;
+	height: auto;
+
+	&:not([href]):not([tabindex]) {
+		&,
+		&:hover,
+		&:focus {
+			color: color-yiq($primary);
+		}
+	}
+}
+
+.ant-calendar-picker-input[readonly] {
+	background-color: $input-bg; // Revert the read-only styles
+}
+
+.ant-calendar-picker:hover .ant-calendar-picker-input:not(.ant-input-disabled) {
+	border-color: $input-focus-border-color;
+}
+
+.ant-calendar-time-picker {
+	bottom: 40px // TODO: No fixed sizing (or replace with rem)
+}
+
+.ant-calendar-time-picker-panel,
+.ant-calendar-time-picker-inner,
+.ant-calendar-time-picker-combobox,
+.ant-calendar-time-picker-select {
+	height: 100%; // Removes the fixed sizing that Ant assumes is the height of the calendar
+}
+
+.ant-calendar-time-picker-select li {
+	@extend .dropdown-item;
+	height: auto;
+	line-height: inherit;
+
+	&:last-child:after {
+		display: none;
+	}
+}
+
+.ant-calendar-range-right .ant-calendar-date-input-wrap {
+	margin-left: 0; // Not sure why there is a negative margin in Ant
+}
+
+.ant-calendar-range .ant-calendar-in-range-cell:before {
+	background: $ant-calendar-date-hover-bg;
+}
+
+.ant-calendar-range-middle {
+	width: auto;
+	margin-left: 0;
+	color: inherit;
+	transform: translateX(-50%);
+}
+
+//------------------------------------------------
+// Checkbox and Radio
+//------------------------------------------------
+
+.checkbox-group-vertical,
+.radio-group-vertical {
+	@extend %font-reset;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.ant-checkbox-wrapper,
+.ant-radio-wrapper {
+	display: inline-flex;
+	align-items: flex-start;
+	max-width: 100%;
+	white-space: normal;
+}
+
+.ant-checkbox-wrapper span:not(.ant-checkbox),
+.ant-radio-wrapper span:not(.ant-radio) {
+	flex: 1 1 auto;
+	min-width: 50%;
+}
+
+.ant-checkbox,
+.ant-radio {
+	top: calc(#{($line-height-base - 1rem) / 2} - 0.5px);
+}
+
+.ant-checkbox-inner,
+.ant-radio-inner {
+	border-color: $input-border-color;
+}
+
+.ant-checkbox-inner,
+.ant-radio-inner {
+	width: $custom-control-indicator-size;
+	height: $custom-control-indicator-size;
+
+	&::after {
+		display: block;
+		width: auto;
+		height: auto;
+	}
+}
+
+.ant-checkbox-inner {
+	&::after {
+		top: 1px;
+		right: 1px;
+		bottom: 1px;
+		left: 1px;
+		border: 0;
+		transform: scale(0);
+	}
+
+	.ant-checkbox-checked &::after {
+		display: block;
+		background: $custom-checkbox-indicator-icon-checked center no-repeat;
+		border: 0;
+		transform: none;
+	}
+}
+
+.ant-radio-inner {
+	&::after {
+		top: 3px;
+		right: 3px;
+		bottom: 3px;
+		left: 3px;
+		border-radius: 50%;
+	}
+
+	.ant-radio-checked &::after {
+		background-color: $white;
+	}
+}
+
+.ant-checkbox-wrapper:hover .ant-checkbox .ant-checkbox-inner,
+.ant-checkbox:hover .ant-checkbox-inner,
+.ant-checkbox-input:focus + .ant-checkbox-inner,
+.ant-checkbox-focused .ant-checkbox-inner,
+.ant-checkbox-checked .ant-checkbox-inner,
+.ant-checkbox-checked:after,
+.ant-radio-wrapper:hover .ant-radio .ant-radio-inner,
+.ant-radio:hover .ant-radio-inner,
+.ant-radio-input:focus + .ant-radio-inner,
+.ant-radio-focused .ant-radio-inner,
+.ant-radio-checked .ant-radio-inner,
+.ant-radio-checked:after {
+	border-color: $input-focus-border-color;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner,
+.ant-radio-checked .ant-radio-inner {
+	background-color: $input-focus-border-color;
+}
+
+.ant-checkbox-input:focus ~ .ant-checkbox-inner,
+.ant-radio-input:focus ~ .ant-radio-inner {
+	box-shadow: $input-focus-box-shadow;
+}
+
+//------------------------------------------------
+// Number Input
+//------------------------------------------------
+
+.ant-input-number {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.ant-input-number-focused:not(.ant-input-number-disabled) {
+	@extend .form-control:focus;
+}
+
+.ant-input-number-input {
+	height: $input-height-inner;
+	padding-left: 0;
+}
+
+//------------------------------------------------
+// Radio Button Group
+//------------------------------------------------
+
+.ant-radio-group {
+	@extend %font-reset;
+	display: flex;
+	min-height: $input-height;
+	justify-content: center;
+	align-items: center;
+}
+
+.ant-radio-group.flex-column {
+	min-height: auto;
+	justify-content: flex-start !important;
+	align-items: flex-start !important;
+}
+
+.ant-radio-button-wrapper {
+	@extend .btn;
+	height: auto;
+	border-color: $input-border-color;
+
+	@include hover-focus {
+		color: $primary;
+	}
+
+	&:first-child {
+		border-top-left-radius: $input-border-radius;
+		border-bottom-left-radius: $input-border-radius;
+	}
+
+	&:last-child {
+		border-top-right-radius: $input-border-radius;
+		border-bottom-right-radius: $input-border-radius;
+	}
+}
+
+.ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+	@extend .btn-primary;
+	box-shadow: none !important;
+
+	&:focus {
+		box-shadow: 0 0 0 $btn-focus-width rgba($primary, .5) !important;
+	}
+}
+
+//------------------------------------------------
+// Selects
+//------------------------------------------------
+
+.ant-select {
+	@extend %font-reset;
+	display: flex;
+	flex: 1;
+}
+
+.ant-select-selection__rendered {
+	@extend %font-reset;
+	margin-left: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.ant-select-open {
+	.ant-select-selection {
+		@extend .form-control:focus;
+	}
+}
+
+.ant-select-dropdown {
+	@extend %font-reset;
+}
+
+.ant-select-dropdown-menu-item {
+	@extend %font-reset;
+	@extend .dropdown-item;
+	white-space: normal;
+	overflow: visible;
+	text-overflow: initial;
+
+	.ant-select-dropdown-menu-item-group-list > & {
+		padding-left: $dropdown-item-padding-x;
+	}
+}
+
+.ant-select-dropdown-menu-item-selected {
+	font-weight: 700;
+
+	&:not(.ant-select-dropdown-menu-item-active) {
+		@extend .active;
+	}
+}
+
+.ant-select-selection--multiple {
+	height: auto;
+	min-height: $input-height;
+
+	.ant-select-selection__rendered {
+		height: auto;
+		margin-top: -4px;
+		margin-bottom: 0;
+		margin-left: 0;
+
+		&::after {
+			display: none;
+		}
+
+		> ul {
+			display: flex;
+			flex-wrap: wrap;
+			margin-top: -1px;
+			margin-bottom: -1px;
+		}
+	}
+
+	.ant-select-search--inline {
+		border-top: 1px solid transparent; // To provide consistent height with choices
+		border-bottom: 1px solid transparent; // To provide consistent height with choices
+	}
+
+	.ant-select-selection__choice {
+		display: flex;
+		float: none;
+	}
+
+	.ant-select-selection__rendered > ul > li {
+		height: auto;
+		line-height: inherit;
+	}
+}
+
+.ant-select-dropdown.ant-select-dropdown--multiple {
+	.ant-select-dropdown-menu-item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.ant-select-selected-icon {
+			position: static;
+			margin-right: -$dropdown-item-padding-x; // Offset icon
+		}
+	}
+
+	.ant-select-dropdown-menu-item-selected .ant-select-selected-icon,
+	.ant-select-dropdown-menu-item-selected:hover .ant-select-selected-icon {
+		color: inherit;
+	}
+}
+
+//------------------------------------------------
+// Sliders
+//------------------------------------------------
+
+.ant-slider {
+	@extend %font-reset;
+
+	&:hover {
+		.ant-slider-rail {
+			background-color: $ant-slider-hover-rail-bg;
+		}
+
+		.ant-slider-track {
+			background-color: $ant-slider-hover-track-bg;
+		}
+
+		.ant-slider-dot {
+			background-color: $ant-slider-hover-dot-bg;
+			border-color: $ant-slider-hover-dot-border;
+		}
+
+		.ant-slider-dot-active {
+			background-color: $ant-slider-hover-dot-active-bg;
+			border-color: $ant-slider-hover-dot-active-border;
+		}
+
+		.ant-slider-handle:not(.ant-tooltip-open) {
+			background-color: $ant-slider-hover-handle-bg;
+			border-color: $ant-slider-hover-handle-border;
+		}
+	}
+}
+
+.ant-slider-rail {
+	background-color: $ant-slider-rail-bg;
+	transition: $btn-transition;
+}
+
+.ant-slider-track {
+	background-color: $ant-slider-track-bg;
+	transition: $btn-transition;
+}
+
+.ant-slider-dot {
+	background-color: $ant-slider-dot-bg;
+	border-color: $ant-slider-dot-border;
+	transition: $btn-transition;
+}
+
+.ant-slider-dot-active {
+	background-color: $ant-slider-active-dot-bg;
+	border-color: $ant-slider-active-dot-border;
+}
+
+.ant-slider-handle {
+	background-color: $ant-slider-handle-bg;
+	border-color: $ant-slider-handle-border;
+	transition: $btn-transition;
+
+	&:focus {
+		background-color: $ant-slider-focus-handle-bg;
+		border-color: $ant-slider-focus-handle-border;
+		box-shadow: $ant-slider-focus-handle-shadow;
+	}
+}
+
+.ant-slider-handle.ant-tooltip-open {
+	background-color: $ant-slider-hover-handle-bg;
+	border-color: $ant-slider-hover-handle-border;
+}
+
+.ant-slider-mark-text,
+.ant-slider-mark-text-active {
+	color: inherit;
+}
+
+.ant-slider-mark-text {
+	width: auto !important;
+	margin-left: 0 !important;
+	transform: translateX(-50%);
+}
+
+//------------------------------------------------
+// Switch
+//------------------------------------------------
+
+.ant-switch:focus {
+	box-shadow: $input-focus-box-shadow;
+}
+
+.ant-switch-checked {
+	background-color: $component-active-bg;
+}
+
+//------------------------------------------------
+// TextAreas
+//------------------------------------------------
+
+textarea.ant-input {
+	min-height: $tedxtarea-min-height;
+}
+
+//------------------------------------------------
+// Addon labels
+//------------------------------------------------
+
+.ant-input-group-addon {
+	@extend .input-group-text;
+	width: auto;
+}
+
+//------------------------------------------------
+// Grouped inputs
+//------------------------------------------------
+
+.ant-input-group,
+form :not(.ant-input-group-wrapper) > .ant-input-group,
+form .ant-input-group-wrapper {
+	@extend %font-reset;
+	@extend .input-group;
+}
+
+.ant-input-group.ant-input-group-compact > .ant-select:first-child > .ant-select-selection {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+
+}
+.ant-input-group.ant-input-group-compact > .ant-select:last-child > .ant-select-selection {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+// TODO: Update Ant Design and see if this is still required
+.ant-input-group.ant-input-group-compact > *:not(:last-child) {
+	border-right-width: $input-border-width;
+	margin-right: -$input-border-width;
+}
+
+//------------------------------------------------
+// Validation
+//------------------------------------------------
+
+.ant-form-explain-holder {
+	&::before {
+		display: none; // Not sure what Ant is doing with this pseudo-element as nothing is displayed but is taking up space
+	}
+
+	.ant-form-explain {
+		display: none;
+		margin-top: 0.5rem;
+	}
+}
+
+.has-error {
+	.ant-input {
+		@extend .form-control.is-invalid;
+	}
+
+	.ant-form-explain {
+		display: block;
+		color: $danger;
+	}
+}

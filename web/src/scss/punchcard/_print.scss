@@ -1,0 +1,67 @@
+$p-font-size-root: 9pt;
+$p-h1-font-size: 18pt;
+$p-h2-font-size: 14pt;
+$p-h3-font-size: 12pt;
+$p-h4-font-size: 11pt;
+$p-h5-font-size: 10pt;
+$p-h6-font-size: 9pt;
+
+@media print {
+  html {
+    font-size: $p-font-size-root;
+  }
+
+  h1 {
+    font-size: $p-h1-font-size;
+  }
+
+  h2 {
+    font-size: $p-h2-font-size;
+  }
+
+  h3 {
+    font-size: $p-h3-font-size;
+  }
+
+  h4 {
+    font-size: $p-h4-font-size;
+  }
+
+  h5 {
+    font-size: $p-h5-font-size;
+  }
+
+  h6 {
+    font-size: $p-h6-font-size;
+  }
+
+  .collapsed + .page-content-wrapper {
+    padding: 0;
+  }
+
+  .page-header {
+    position: relative;
+    padding-right: $spacer * 7;
+  }
+
+  .print-brand-logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $spacer * 6;
+    min-height: $p-h1-font-size;
+  }
+
+  .page-content {
+    margin-top: $spacer / 2;
+    padding: 0;
+  }
+
+  .card {
+    border: $border;
+  }
+
+  .card-body {
+    padding: $spacer;
+  }
+}

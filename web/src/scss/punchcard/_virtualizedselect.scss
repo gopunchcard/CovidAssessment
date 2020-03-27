@@ -1,0 +1,141 @@
+.form-group {
+  .Select-control {
+    @extend .form-control;
+    display: table;
+    height: auto;
+    padding: 0;
+    border-spacing: 1px;
+  }
+
+  &.is-focused,
+  .is-focused {
+    &,
+    &:not(.is-opened) {
+      .Select-control {
+        border-color: $input-focus-border-color;
+      }
+    }
+  }
+
+  .Select-input {
+		position: relative;
+    height: auto;
+		padding: 0;
+		z-index: 1;
+
+    > input {
+      padding: $input-btn-padding-y $input-btn-padding-x;
+      line-height: 1;
+    }
+	}
+	
+	.Select--multi {
+		.Select-value {
+			margin-left: 1rem;
+		}
+
+		.Select-input {
+			margin-left: 0;
+		}
+	}
+
+  .Select-placeholder {
+    color: $input-placeholder-color;
+  }
+
+  .Select-placeholder,
+  &.Select--single > .Select-control .Select-value,
+  .Select--single > .Select-control .Select-value {
+    top: 50%;
+		bottom: auto;
+		left: 1px;
+    padding-left: $input-btn-padding-x;
+    padding-right: $input-btn-padding-x;
+    transform: translateY(-50%);
+  }
+
+  &.has-value.is-clearable.Select--single
+    > .Select-control
+    .Select-value
+    .has-value.is-clearable.Select--single
+    > .Select-control
+    .Select-value {
+    padding-right: 3.5em;
+  }
+
+  .Select-menu-outer {
+    z-index: 3;
+    overflow: hidden;
+    border-color: $input-focus-border-color;
+    box-shadow: $card-shadow-active;
+  }
+
+  .ReactVirtualized__Grid__innerScrollContainer {
+    > * + * {
+      border-top: 1px solid $input-border-color;
+    }
+  }
+
+  .Select-menu-header {
+    padding: 0 $input-btn-padding-x;
+    background-color: lighten($input-border-color, 40%);
+    overflow: hidden;
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 35px;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .VirtualizedSelectOption,
+  .Select-menu-option {
+    padding-left: $input-btn-padding-x;
+    padding-right: $input-btn-padding-x;
+    cursor: pointer;
+  }
+
+  .Select-menu-option {
+    padding-top: $input-btn-padding-y;
+    padding-bottom: $input-btn-padding-y;
+  }
+
+  .VirtualizedSelectFocusedOption,
+  .Select-menu-option.focused {
+    background-color: $input-focus-border-color;
+    border-color: $input-focus-border-color;
+    color: #fff;
+  }
+
+  .VirtualizedSelectSelectedOption,
+  .Select-menu-option.emphasis {
+    font-weight: 700;
+  }
+
+  .Select-option-label {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .Select-option-caption {
+    opacity: 0.6;
+    font-size: 0.9em;
+    font-style: italic;
+  }
+
+  .Select-noresults {
+    padding: $input-btn-padding-y $input-btn-padding-x;
+  }
+
+  .Select-menu-add {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    text-decoration: none;
+
+    &-icon {
+      margin-right: $input-btn-padding-x;
+    }
+  }
+}

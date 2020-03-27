@@ -1,0 +1,73 @@
+[
+    {
+        "id": "q1",
+        "question": "**Are you experiencing any of the following:**",
+        "details": "- severe difficulty breathing (e.g., struggling for each breath\n - speaking in single words), \n - severe chest pain, \n - having a very hard time waking up, \n - feeling confused, lost consciousness",
+        "nextPositive": "emergencyInfo",
+        "nextNegative": "q2"
+    },
+    {
+        "id": "q2",
+        "question": "**Are you experiencing any of the following:**",
+        "details": "- short of breath at rest\n- inability to lie down because of difficulty breathing\n- chronic health conditions that you are having difficulty managing because of your current respiratory illness",
+        "nextPositive": "callNurse",
+        "nextNegative": "q3",
+        "previousQuestion": "q1"
+    },
+    {
+        "id": "q3",
+        "question": "**The rest of this assessment will determine if you need to speak with Health Link (811).**",
+        "question2": "**Do you have any of the following:**",
+        "details": "- fever\n- cough\n- shortness of breath\n- sore throat",
+        "nextPositive": "q4",
+        "nextNegative": "q8",
+        "previousQuestion": "q2"
+    },
+    {
+        "id": "q4",
+        "question": "**Were you exposed to someone who has been confirmed as having COVID-19 within 14 days of your symptoms starting?**",
+        "nextPositive": "contactForm",
+        "nextNegative": "q5",
+        "previousQuestion": "q3"
+    },
+    {
+        "id": "q5",
+        "question": "**Did you travel outside Canada within 14 days of your symptoms starting?**",
+        "nextPositive": "contactForm",
+        "nextNegative": "q6",
+        "previousQuestion": "q4"
+    },
+    {
+        "id": "q6",
+        "question": "**Have you been in close contact with someone with respiratory illness in the past 14 days?**",
+        "question2": "**A close contact is defined as a person who:**",
+        "details": "- provided care for the individual, including healthcare workers, family members or other caregivers, or who had other similar close physical contact without consistent and appropriate use of personal protective equipment\n**OR**\n- who lived with or otherwise had close prolonged contact (within 2 meters) with the person while they were infectious\n **OR**\n- had direct contact with infectious bodily fluids of the person (e.g. was coughed or sneezed on) while not wearing recommended personal protective equipment",
+        "nextPositive": "q7",
+        "nextNegative": "nResult15",
+        "previousQuestion": "q5"
+    },
+    {
+        "id": "q7",
+        "question": "**Had that person travelled outside of Canada within the past 28 days?**",
+        "nextPositive": "contactForm",
+        "nextNegative": "nResult15a",
+        "previousQuestion": "q6"
+    },
+    {
+        "id": "q8",
+        "question": "**In the past 14 days have you had close contact with someone who is confirmed as having COVID-19?**",
+        "question2": "**A close contact is defined as a person who:**",
+        "details": "- provided care for the individual, including healthcare workers, family members or other caregivers, or who had other similar close physical contact without consistent and appropriate use of personal protective equipment\n- who lived with or otherwise had close prolonged contact (within 2 meters) with the person while they were infectious\n- **OR**\n- had direct contact with infectious bodily fluids of the person (e.g. was coughed or sneezed on) while not wearing recommended personal protective equipment",
+        "nextPositive": "nResult16",
+        "nextNegative": "q9",
+        "previousQuestion": "q7"
+    },
+    {
+        "id": "q9",
+        "question": "**In the past 14 days have you returned from travel to any other locations outside of Canada?**",
+        "question2": "**Travel includes passing through an airport**",
+        "nextPositive": "nResult16a",
+        "nextNegative": "nResult18",
+        "previousQuestion": "q8"
+    }
+]

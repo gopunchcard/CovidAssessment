@@ -1,0 +1,423 @@
+//////////////////////////////////////////////////
+// Site config
+//////////////////////////////////////////////////
+
+$enable-wireframe: false;
+
+$navbar-positions: (
+	top: 'TOP',
+	left: 'LEFT',
+	right: 'RIGHT');
+$navbar-position: map-get($navbar-positions, top);
+$navbar-fixed: false; // FUTURE: Handle left and right navbars
+
+//////////////////////////////////////////////////
+// Color system
+//////////////////////////////////////////////////
+
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+
+$primary: #0074dd;
+$secondary: #1474c8;
+$tertiary: #21466a;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f5f7f8;
+$dark: #003D4C;
+$white: #fff;
+$lightdark: mix( $dark, $white, 75% );
+
+@if $enable-wireframe {
+	$primary: $gray-600;
+	$secondary: $gray-400;
+	$tertiary: $gray-700;
+}
+
+$theme-colors: (
+	'primary': $primary,
+	'secondary': $secondary,
+	'tertiary': $tertiary,
+	'white': $white,
+	'lightdark': $lightdark,
+);
+
+//////////////////////////////////////////////////
+// Transitions
+//////////////////////////////////////////////////
+
+$transition-duration-base: 175ms;
+$transition-duration-long: 300ms;
+$transition-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+
+//////////////////////////////////////////////////
+// Spacing
+//////////////////////////////////////////////////
+
+$spacer: 1rem;
+$spacers: (
+	0: 0,
+	1: $spacer * 0.25,
+	2: $spacer * 0.5,
+	3: $spacer,
+	4: $spacer * 2,
+	5: $spacer * 3,
+	6: $spacer * 4,
+	7: $spacer * 5
+);
+
+//////////////////////////////////////////////////
+// Body
+//////////////////////////////////////////////////
+
+$body-color: #333;
+$body-bg: #fff;
+$body-bg-alt: $light;
+
+//////////////////////////////////////////////////
+// Links
+//////////////////////////////////////////////////
+
+$link-color: $secondary;
+$link-hover-color: darken($link-color, 15%);
+$text-muted: rgba($body-color, 0.4);
+
+//////////////////////////////////////////////////
+// Grid breakpoints
+//////////////////////////////////////////////////
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1600px
+);
+
+//////////////////////////////////////////////////
+// Grid containers
+//////////////////////////////////////////////////
+
+$container-max-widths: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+//////////////////////////////////////////////////
+// Grid columns
+//////////////////////////////////////////////////
+
+$grid-gutter-width: $spacer * 2;
+
+//////////////////////////////////////////////////
+// Components
+//////////////////////////////////////////////////
+
+$line-height-sm: 1.2;
+
+$border-width: 1px;
+$border-color: $gray-400;
+$border: $border-width solid $border-color;
+
+$border-radius: 0.25rem;
+$border-radius-lg: 0.3rem;
+$border-radius-sm: 0.2rem;
+
+$brand-logo-width: 134px;
+$brand-logo-height: 28px; 
+$brand-aspect-ratio: $brand-logo-height / $brand-logo-width;
+
+$disabled-opacity: 0.25;
+
+$icon-size: 1.715rem;
+
+//////////////////////////////////////////////////
+// Fonts
+//////////////////////////////////////////////////
+
+$font-family-base: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$sans-serif-family: $font-family-base;
+
+$font-size-root-xs: 18px;
+$font-size-root: 21px;
+$font-size-base: 1rem;
+
+$line-height-base: 1.65;
+
+$h1-font-size: $font-size-base * 2;
+$h2-font-size: $font-size-base * 1.75;
+$h3-font-size: $font-size-base * 1.5;
+$h4-font-size: $font-size-base * 1.25;
+$h5-font-size: $font-size-base * 1.125;
+$h6-font-size: $font-size-base;
+
+$headings-font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, serif;
+$headings-font-weight: 700;
+$headings-margin-bottom: 0.75rem;
+$headings-line-height: 1.35;
+
+$display1-size: 3.5rem;
+$display2-size: 3rem;
+$display3-size: 2.5rem;
+$display4-size: 2rem;
+$display5-size: 1.5rem;
+$display6-size: 1.25rem;
+
+$display1-weight: 900;
+$display2-weight: 700;
+$display3-weight: 700;
+$display4-weight: 700;
+$display5-weight: 700;
+$display6-weight: 700;
+$display-line-height: 1.1;
+
+$lead-font-size: ($font-size-base * 1.25);
+$lead-font-weight: 400;
+
+$max-read-width: 40em;
+
+$small-font-size: 85%;
+
+//////////////////////////////////////////////////
+// Tables
+//////////////////////////////////////////////////
+
+$table-hover-bg: mix($primary, $gray-100, 2%);
+
+$table-border-width: 1px;
+
+$table-head-cell-padding-y: 0.3rem;
+
+$table-highlight-bg: lighten($primary, 36%);
+$table-highlight-bg-hover: darken(white, 4%);
+$table-highlight-border: $table-highlight-bg-hover;
+
+$table-icon-padding-y: 0.62rem;
+$table-icon-padding-x: 0.75rem;
+
+$table-cell-padding-sm: 0.5rem;
+
+//////////////////////////////////////////////////
+// Buttons
+//////////////////////////////////////////////////
+
+$btn-font-family: $headings-font-family;
+
+$input-btn-padding-y: 0.5rem;
+$input-btn-padding-x: 1rem;
+$btn-padding-x: 2rem;
+
+$input-btn-padding-y-lg: 0.75rem;
+$input-btn-padding-x-lg: 1.5rem;
+$btn-padding-x-lg: 2.5rem;
+
+$btn-border-radius: $input-btn-padding-y * 2 + ($font-size-base * $line-height-base);
+
+$input-btn-icon-padding: 0.75em;
+
+$btn-font-weight: 700;
+
+$btn-box-shadow: 0 3px 6px 0 rgba(#000, 0.16);
+$btn-hover-box-shadow: 0 3px 12px 0 rgba(#000, 0.3);
+$btn-active-box-shadow: 0 1px 2px 0 rgba(#000, 0.3);
+
+$btn-disabled-opacity: 0.25;
+
+//////////////////////////////////////////////////
+// Tabs
+//////////////////////////////////////////////////
+
+$tab-padding-x: $input-btn-padding-x;
+$tab-padding-y: $input-btn-padding-y;
+
+$tab-colour: $link-color;
+
+$tab-hover-color: $link-hover-color;
+$tab-hover-bg: rgba($link-color, 0.1);
+
+$tab-active-color: $body-color;
+$tab-active-bg: transparent;
+
+//////////////////////////////////////////////////
+// Forms
+//////////////////////////////////////////////////
+
+$form-group-margin-bottom: 1.75rem;
+
+$input-border-color: $gray-400;
+
+$input-label-font-weight: 700;
+
+$input-btn-focus-color: rgba($primary, .25);
+$input-focus-border-color: $primary;
+
+$input-placeholder-color: $gray-400;
+
+$input-btn-line-height: $line-height-base;
+$input-btn-border-width: $border-width;
+
+$input-height-border: $input-btn-border-width * 2;
+$input-height-inner: ($font-size-base * $input-btn-line-height) + ($input-btn-padding-y * 2);
+$input-height: calc(#{$input-height-inner} + #{$input-height-border});
+
+$input-switch-handle-bg: $primary;
+$input-switch-handle-color: #fff;
+
+$custom-control-indicator-bg: transparent;
+$custom-control-indicator-border: $input-border-color;
+
+$custom-control-indicator-checked-bg: $primary;
+
+$custom-control-indicator-active-bg: rgba($primary, 0.35);
+$custom-control-indicator-active-border: $custom-control-indicator-active-bg;
+
+$custom-checkbox-indicator-indeterminate-bg: $custom-control-indicator-checked-bg;
+
+$tedxtarea-min-height: 10rem;
+
+//////////////////////////////////////////////////
+// Dropdowns
+//////////////////////////////////////////////////
+
+$dropdown-bg: #fff;
+
+$dropdown-link-color: $gray-900;
+
+$dropdown-link-active-color: $dropdown-link-color;
+$dropdown-link-active-bg: $dropdown-bg;
+
+$dropdown-item-padding-y: 0.5rem;
+
+//////////////////////////////////////////////////
+// Z-index
+//////////////////////////////////////////////////
+
+//////////////////////////////////////////////////
+// Navs
+//////////////////////////////////////////////////
+
+//////////////////////////////////////////////////
+// Navbar
+//////////////////////////////////////////////////
+
+$navbar-width-md: 18rem;
+$navbar-width-md-collapsed: 4rem;
+$navbar-height: 3.5rem;
+$navbar-sub-height: 2.5rem;
+
+$navbar-side-width: 20rem;
+$navbar-side-width-lg: 25rem;
+$navbar-side-width-sm: 15rem;
+
+$navbar-dark-color: #fff;
+$navbar-dark-hover-color: #fff;
+
+$nav-collapse-bg: #fff;
+$nav-collapse-color: $link-color;
+
+$navbar-shadow-base: 0 3px 6px 0 rgba(#000, 0.16);
+
+$nav-link-padding-x: 0.83rem;
+$nav-link-padding-y: 1rem;
+
+$navbar-toggler-padding-y: 0;
+$navbar-toggler-padding-x: $grid-gutter-width / 2;
+$navbar-toggler-border-radius: 0;
+
+//////////////////////////////////////////////////
+// Page Hero
+//////////////////////////////////////////////////
+
+$page-hero-spacer-top: $grid-gutter-width;
+$page-hero-spacer-bottom: $grid-gutter-width;
+$page-hero-spacer-top-sm: $grid-gutter-width * 0.5;
+$page-hero-spacer-bottom-sm: $grid-gutter-width * 0.5;
+$page-hero-spacer-top-lg: $grid-gutter-width * 1.5;
+$page-hero-spacer-bottom-lg: $grid-gutter-width * 1.5;
+
+//////////////////////////////////////////////////
+// Page Footer
+//////////////////////////////////////////////////
+
+$page-footer-bg: $body-bg;
+$page-footer-color: #999;
+
+$page-footer-spacer-top: $grid-gutter-width * 2;
+$page-footer-spacer-bottom: $grid-gutter-width * 2;
+$page-footer-spacer-top-sm: $grid-gutter-width;
+$page-footer-spacer-bottom-sm: $grid-gutter-width ;
+$page-footer-spacer-top-lg: $grid-gutter-width * 3;
+$page-footer-spacer-bottom-lg: $grid-gutter-width * 3;
+
+//////////////////////////////////////////////////
+// Cards
+//////////////////////////////////////////////////
+
+$card-spacer-x: $grid-gutter-width;
+$card-spacer-y: $grid-gutter-width;
+
+$card-border-width: 0;
+$card-border-radius: 0;
+
+$card-inner-border-radius: 0;
+
+$card-shadow-base: 0 6px 24px 0 rgba(black, 0.16);
+$card-shadow-hover: 0 6px 12px 0 rgba(black, 0.3);
+$card-shadow-active: 0 2px 4px 0 rgba(black, 0.3);
+
+//////////////////////////////////////////////////
+// Modals
+//////////////////////////////////////////////////
+
+$modal-inner-padding: $grid-gutter-width;
+
+//////////////////////////////////////////////////
+// Datepicker
+//////////////////////////////////////////////////
+
+$datepicker-spacer: $input-btn-padding-x;
+$datepicker-prev-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg fill='#{$link-color}' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z'/%3E%3C/svg%3E"),'#','%23');
+$datepicker-next-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg fill='#{$link-color}' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z'/%3E%3C/svg%3E"),'#','%23');
+
+
+//////////////////////////////////////////////////
+// Toast
+//////////////////////////////////////////////////
+
+$toast-inner-padding: $grid-gutter-width / 2;
+
+$toast-border-radius: $border-radius;
+
+$toast-shadow-base: $card-shadow-base;
+$toast-shadow-active: $card-shadow-active;
+
+//////////////////////////////////////////////////
+// Pincode
+//////////////////////////////////////////////////
+
+$pincode-number-cols: 3;
+$pincode-number-size: $grid-gutter-width * 1.5;
+$pincode-number-spacer: $grid-gutter-width / 6;
+
+//////////////////////////////////////////////////
+// Print
+//////////////////////////////////////////////////
+
+$print-page-size: a4;
+
+//////////////////////////////////////////////////
+// Project specific variables
+// Add your custom variables here
+//////////////////////////////////////////////////

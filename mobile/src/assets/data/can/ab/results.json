@@ -1,0 +1,60 @@
+[
+    {
+        "id": "emergencyInfo",
+        "header": "Please call 911 or go directly to your nearest emergency department."
+    },
+    {
+        "id": "callNurse",
+        "header": "Please call 811 to speak with a nurse.",
+        "description": "Because you may need to speak with a nurse about your symptoms, please call 811. We are experiencing heavy call volumes and will get to your call as quickly as we can.\n\nAHS strongly urges anyone who has symptoms, including a cough, runny nose, fever or sore throat, to [self isolate](https://open.alberta.ca/dataset/44e7c639-7bb6-4bb4-9138-1abf5c56a7b8/resource/91cd86ac-7eaf-4376-9f9a-0b600a9af2fa/download/health-self-isolation-information-sheet.pdf) for 14 days.",
+        "showSubmit": true
+    },
+    {
+        "id": "nResult15",
+        "header": "You don't need to be tested for COVID-19.",
+        "description": "There are many common viruses other than COVID-19 that can cause your symptoms. Based on your responses you do not need to be tested for COVID-19 at this time.\n\nAHS strongly urges anyone who has symptoms, including a cough, runny nose, fever or sore throat, to [self isolate](https://open.alberta.ca/dataset/44e7c639-7bb6-4bb4-9138-1abf5c56a7b8/resource/91cd86ac-7eaf-4376-9f9a-0b600a9af2fa/download/health-self-isolation-information-sheet.pdf) for 14 days.\n\nTo protect yourself while out in public, wash your hands frequently, and maintain a distance of about 2 metres from others.\n\nIf your symptoms worsen, or if you are concerned, go to [MyHealth.Alberta.ca](https://myhealth.alberta.ca) for care advice or call 811. We are experiencing heavy call volumes and will get to your call as quickly as we can.",
+        "showSubmit": true
+    },
+    {
+        "id": "nResult15a",
+        "header": "You don't need to be tested for COVID-19.",
+        "description": "There are many common viruses other than COVID-19 that can cause your symptoms. Based on your responses you do not need to be tested for COVID-19 at this time.\n\nAHS strongly urges anyone who has symptoms, including a cough, runny nose, fever or sore throat, to [self isolate](https://open.alberta.ca/dataset/44e7c639-7bb6-4bb4-9138-1abf5c56a7b8/resource/91cd86ac-7eaf-4376-9f9a-0b600a9af2fa/download/health-self-isolation-information-sheet.pdf) for 14 days.\n\nTo protect yourself while out in public, wash your hands frequently, and maintain a distance of about 2 metres from others.\n\nIf your symptoms worsen, or if you are concerned, go to [MyHealth.Alberta.ca](https://myhealth.alberta.ca) for care advice or call 811. We are experiencing heavy call volumes and will get to your call as quickly as we can.",
+        "showSubmit": true
+    },
+    {
+        "id": "nResult16a",
+        "header": "Since you don’t have any COVID-19 symptoms, you don’t need to be tested for COVID-19.",
+        "description": "However, there’s a chance you could get sick since it’s less than 14 days since your exposure. You should [self isolate](https://open.alberta.ca/dataset/44e7c639-7bb6-4bb4-9138-1abf5c56a7b8/resource/91cd86ac-7eaf-4376-9f9a-0b600a9af2fa/download/health-self-isolation-information-sheet.pdf) until 14 days after the exposure. Self-isolation means don’t go to any public places, stay at home, and don’t have any visitors. Don’t share personal items like dishes, utensils and towels. Wash your hands often. If you have questions, visit [AHS.ca](https://www.albertahealthservices.ca/topics/Page16997.aspx) .\n\nIf you get any <CovidSymptomsLink />, take this self-assessment again. If you need information, go to [AHS.ca](https://www.albertahealthservices.ca/topics/Page16997.aspx) .\n\nIf you are experiencing other symptoms and want assessment, go to [MyHealth.Alberta.ca](https://myhealth.alberta.ca) for care advice or call 811. We are experiencing heavy call volumes and will get to your call as quickly as we can.",
+        "showSubmit": true
+    },
+    {
+        "id": "nResult16",
+        "header": "Since you don’t have any COVID-19 symptoms, you don’t need to be tested for COVID-19.",
+        "description": "However, there’s a chance you could get sick since it’s less than 14 days since your exposure. You should [self isolate](https://open.alberta.ca/dataset/44e7c639-7bb6-4bb4-9138-1abf5c56a7b8/resource/91cd86ac-7eaf-4376-9f9a-0b600a9af2fa/download/health-self-isolation-information-sheet.pdf) until 14 days after the exposure. Self-isolation means don’t go to any public places, stay at home, and don’t have any visitors. Don’t share personal items like dishes, utensils, and towels and wash your hands often. If you have any questions, go to [AHS.ca](https://www.albertahealthservices.ca/topics/Page16997.aspx) .\n\nIf you get any <CovidSymptomsLink />, take this self-assessment again. If you need information, visit [AHS.ca](https://www.albertahealthservices.ca/topics/Page16997.aspx) .\n\nIf you are experiencing other symptoms and want assessment, go to [MyHealth.Alberta.ca](https://myhealth.alberta.ca) for care advice or call 811. We are experiencing heavy call volumes and will get to your call as quickly as we can.",
+        "showSubmit": true
+    },
+    {
+        "id": "nResult17",
+        "header": "Since you don’t have any COVID-19 symptoms, you don’t need to be tested for COVID-19.",
+        "description": "However, there’s a chance you could get sick since it’s less than 14 days since your exposure. You should [self isolate](https://open.alberta.ca/dataset/44e7c639-7bb6-4bb4-9138-1abf5c56a7b8/resource/91cd86ac-7eaf-4376-9f9a-0b600a9af2fa/download/health-self-isolation-information-sheet.pdf) until 14 days after your return to Canada. Self-isolation means don’t go to any public places, stay at home, and don’t have any visitors. Don’t share personal items like dishes, utensils, and towels and wash your hands often. If you have any questions, go to [AHS.ca](https://www.albertahealthservices.ca/topics/Page16997.aspx) .\n\nIf you get any <CovidSymptomsLink />, take this self-assessment again. If you need more information, visit [AHS.ca](https://www.albertahealthservices.ca/topics/Page16997.aspx) .\n\nIf you are experiencing other symptoms and want assessment, go to [MyHealth.Alberta.ca](https://myhealth.alberta.ca) for care advice or call 811. We are experiencing heavy call volumes and will get to your call as quickly as we can.",
+        "showSubmit": true
+    },
+    {
+        "id": "nResult18",
+        "header": "Since you don’t have any COVID-19 symptoms, you don’t need to be tested for COVID-19.",
+        "description": "If you get any <CovidSymptomsLink />, take this self-assessment again. If you need more information, visit [AHS.ca](https://www.albertahealthservices.ca/topics/Page16997.aspx) .\n\nAHS strongly urges anyone who has symptoms, including a cough, runny nose, fever or sore throat, to [self isolate](https://open.alberta.ca/dataset/44e7c639-7bb6-4bb4-9138-1abf5c56a7b8/resource/91cd86ac-7eaf-4376-9f9a-0b600a9af2fa/download/health-self-isolation-information-sheet.pdf) for 14 days.\n\nTo protect yourself while out in public, wash your hands frequently, and maintain a distance of about 2 metres from others.\n\nIf you are experiencing other symptoms and want assessment, go to [MyHealth.Alberta.ca](https://myhealth.alberta.ca) for care advice or call 811. We are experiencing heavy call volumes and will get to your call as quickly as we can.",
+        "showSubmit": true
+    },
+    {
+        "id": "nResult18a",
+        "header": " Since you don’t have any COVID-19 symptoms, you don’t need to be tested for COVID-19.",
+        "description": "If you get any <CovidSymptomsLink />, take this self-assessment again. If you need more information, visit [AHS.ca](https://www.albertahealthservices.ca/topics/Page16997.aspx) .\n\nAHS strongly urges anyone who has symptoms, including a cough, runny nose, fever or sore throat, to [self isolate](https://open.alberta.ca/dataset/44e7c639-7bb6-4bb4-9138-1abf5c56a7b8/resource/91cd86ac-7eaf-4376-9f9a-0b600a9af2fa/download/health-self-isolation-information-sheet.pdf) for 14 days.\n\nTo protect yourself while out in public, wash your hands frequently, and maintain a distance of about 2 metres from others.\n\nIf you are experiencing other symptoms and want assessment, go to [MyHealth.Alberta.ca](https://myhealth.alberta.ca) for care advice or call 811. We are experiencing heavy call volumes and will get to your call as quickly as we can.",
+        "showSubmit": true
+    },
+    {
+        "id": "contactForm",
+        "header": "Please call 811 to speak with a nurse.",
+        "description": "Based on the responses you've just provided, please call 811 to have your symptoms assessed.  811 is currently experiencing heavy call volumes and we'll get to your call as quickly as we can.\n\nPlease do not go to an emergency department, family doctor or walk-in clinic unless your symptoms worsen.\n\nBecause you have (or had) symptoms, you should [self isolate](https://open.alberta.ca/dataset/44e7c639-7bb6-4bb4-9138-1abf5c56a7b8/resource/91cd86ac-7eaf-4376-9f9a-0b600a9af2fa/download/health-self-isolation-information-sheet.pdf) until your test results are available. That means don't go to any public places, stay at home, and don’t have any visitors. Don’t share personal items like dishes, utensils, and towels and wash your hands often. If you have any headers, visit [AHS.ca](https://www.albertahealthservices.ca/topics/Page16997.aspx) \n\nIf you have had a swab test, you will receive a phone call from Alberta Health Services with your results and to provide further instruction on self-isolation. This could take up to 4 days after the swab was taken.",
+        "showSubmit": true
+    }
+]

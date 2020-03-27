@@ -1,0 +1,16 @@
+.page-hero {
+	padding-top: $page-hero-spacer-top;
+	padding-bottom: $page-hero-spacer-bottom;
+
+	&-lg {
+		@include media-breakpoint-up(lg) {
+			padding-top: $page-hero-spacer-top-lg;
+			padding-bottom: $page-hero-spacer-bottom-lg;
+		}
+	}
+
+	&-sm {
+		padding-top: $page-hero-spacer-top-sm;
+		padding-bottom: $page-hero-spacer-bottom-sm;
+	}
+}

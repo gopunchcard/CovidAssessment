@@ -1,0 +1,41 @@
+//------------------------------------------------
+// Calendar
+//------------------------------------------------
+
+$ant-calendar-date-size: 2rem;
+
+$ant-calendar-date-hover-bg: rgba($primary, 0.1);
+
+$ant-calendar-date-active-bg: $primary;
+$ant-calendar-date-active-color: $white;
+
+$ant-calendar-date-today-bg: rgba($primary, 0.1);
+$ant-calendar-date-today-border: $primary;
+$ant-calendar-date-today-color: $primary;
+
+//------------------------------------------------
+// Sliders
+//------------------------------------------------
+
+$ant-slider-rail-bg: lighten($input-border-color, $theme-color-interval);
+$ant-slider-track-bg: $input-focus-border-color;
+$ant-slider-dot-bg: $white;
+$ant-slider-dot-border: $ant-slider-rail-bg;
+$ant-slider-handle-bg: $ant-slider-track-bg;
+$ant-slider-handle-border: $ant-slider-track-bg;
+
+$ant-slider-hover-rail-bg: lighten($input-border-color, $theme-color-interval * 0.25);
+$ant-slider-hover-track-bg: darken($ant-slider-track-bg, $theme-color-interval);
+$ant-slider-hover-dot-bg: $white;
+$ant-slider-hover-dot-border: $ant-slider-hover-rail-bg;
+$ant-slider-hover-dot-active-bg: $white;
+$ant-slider-hover-dot-active-border: $ant-slider-hover-track-bg;
+$ant-slider-hover-handle-bg: $ant-slider-hover-track-bg;
+$ant-slider-hover-handle-border: $ant-slider-hover-track-bg;
+
+$ant-slider-focus-handle-bg: $ant-slider-hover-track-bg;
+$ant-slider-focus-handle-border: $ant-slider-hover-handle-border;
+$ant-slider-focus-handle-shadow: 0 0 0 $input-btn-focus-width rgba($ant-slider-focus-handle-border, 0.25);
+
+$ant-slider-active-dot-bg: $white;
+$ant-slider-active-dot-border: $ant-slider-track-bg;

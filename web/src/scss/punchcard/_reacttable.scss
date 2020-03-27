@@ -1,0 +1,325 @@
+//////////////////////////////////////////////////
+// Extend normal table styles
+//////////////////////////////////////////////////
+
+.ReactTable .table {
+	@extend table !optional;
+}
+
+.ReactTable .thead {
+	@extend thead !optional;
+}
+
+.ReactTable .tbody {
+	@extend tbody !optional;
+}
+
+.ReactTable .tfoot {
+	@extend tfoot !optional;
+}
+
+.ReactTable .tr {
+	@extend tr !optional;
+}
+
+.ReactTable .th {
+	@extend th !optional;
+}
+
+.ReactTable .td {
+	@extend td !optional;
+}
+
+//////////////////////////////////////////////////
+// Style reset
+//////////////////////////////////////////////////
+
+.ReactTable.data-table {
+	position: relative;
+	border: 0;
+
+	.rt-thead {
+		&.-header {
+			box-shadow: none;
+		}
+
+		.rt-tr {
+			text-align: left;
+		}
+	}
+
+	.rt-tbody {
+		min-height: 1px;
+		margin-top: -1px;
+	}
+
+	.rt-tr-group {
+		border: 0;
+	}
+
+	.rt-td {
+		transition: none;
+	}
+
+	&:not(.table-scroll) {
+		.rt-tbody {
+			overflow: visible;
+		}
+	}
+	.spinner {
+		align-self: center;
+		margin: 60px 0;
+	}
+}
+
+.ReactTable .thead.theadgroup {
+	background-color: transparent;
+	border: 0;
+
+	.rt-th {
+		border-left: 0;
+		border-right: 0;
+	}
+}
+
+.ReactTable .table-bordered {
+	.th,
+	.td {
+		border-left: 0;
+		border-bottom: 0;
+	}
+}
+
+.ReactTable .table:not(.table-bordered) {
+	.th,
+	.td {
+		border-right: 0;
+	}
+}
+
+//////////////////////////////////////////////////
+// Pagination
+//////////////////////////////////////////////////
+
+.ReactTable.data-table {
+	margin-bottom: 0;
+
+	.pagination-bottom {
+		order: 4;
+		text-align: center;
+	}
+
+	.-pagination {
+		display: inline-flex;
+		align-items: center;
+		padding: 0;
+		border: 0;
+		box-shadow: none;
+
+		.btn {
+			border: 0;
+
+			svg {
+				width: 2.25em;
+				height: 2.25em;
+			}
+		}
+
+		input,
+		select {
+			@extend .form-control;
+		}
+
+		input {
+			width: $spacer * 5;
+			margin-left: $spacer * 0.5;
+			margin-right: $spacer * 0.5;
+		}
+
+		select {
+			width: $spacer * 8;
+		}
+
+		.-center {
+			justify-content: center;
+		}
+
+		.-pageInfo,
+		.-pageSizeOptions {
+			margin: 0 $spacer * 1.5;
+		}
+
+		.-pageJump {
+			vertical-align: middle;
+		}
+
+		@include media-breakpoint-up(md) {
+			.-center {
+				flex-wrap: nowrap;
+			}
+
+			.-previous {
+				margin-right: map-get($spacers, 3);
+			}
+
+			.-next {
+				margin-left: map-get($spacers, 3);
+			}
+		}
+
+		@include media-breakpoint-down(sm) {
+			.-center {
+				flex: 1 1 100%;
+				order: 3;
+				width: 100%;
+				margin-top: $spacer * 0.5;
+			}
+
+			.-previous,
+			.-next {
+				flex: 1 1 auto;
+				width: 50%;
+			}
+
+			.-previous {
+				margin-right: -($border-width * 0.5);
+			}
+
+			.-next {
+				margin-left: -($border-width * 0.5);
+			}
+
+			.-pageInfo,
+			.-pageSizeOptions {
+				margin-top: $spacer * 0.5;
+				margin-bottom: $spacer * 0.5;
+			}
+
+			.btn {
+				width: 100%;
+			}
+		}
+	}
+}
+
+//////////////////////////////////////////////////
+// Loading
+//////////////////////////////////////////////////
+
+.ReactTable.data-table {
+	.-loading {
+		background-color: $body-bg;
+	}
+}
+
+//////////////////////////////////////////////////
+// Empty table
+//////////////////////////////////////////////////
+
+.ReactTable.data-table {
+	.rt-noData {
+		display: flex;
+		order: 3;
+		flex-direction: column;
+		justify-content: center;
+		position: relative;
+		top: auto;
+		left: auto;
+		padding: $grid-gutter-width;
+		color: $body-color;
+		font-weight: 700;
+		text-align: center;
+		pointer-events: initial;
+		transform: none;
+	}
+}
+//================================================
+//
+// React Table
+//
+//================================================
+
+//------------------------------------------------
+// Custom styling for Datatable component
+//------------------------------------------------
+
+.ReactTable.data-table {
+	.rt-thead.-filters { 
+		background-color: $light;
+	}
+	&.has-actions {
+		.rt-th,
+		.rt-td {
+			&:last-child {
+				flex: 0 !important;
+				min-width: 135px !important;
+			}
+		}
+	}
+
+	.rt-th {
+		input {
+			height: 100%;
+		}
+
+		.btn-link {
+			width: 100%;
+			padding-left: 0;
+			padding-right: 0;
+			text-align :inherit;
+			
+			&:hover {
+				text-decoration: underline; // datepicker not reached
+			}
+		}
+	}
+
+	.rt-tr.tr {
+		&:hover {
+			background-color: $table-highlight-bg-hover;
+		}
+	}
+	
+	a.btn-icon {
+		padding-top :0;
+		padding-bottom: 0;
+	}
+}
+
+
+//------------------------------------------------
+// Datepicker
+//------------------------------------------------
+
+.rt-datepicker-wrapper {
+	position: relative;
+	cursor: pointer;
+
+	input {
+		cursor: pointer !important;
+	}
+
+	.rt-datepicker-placeholder {
+		cursor: pointer;
+	}
+
+	.ant-calendar-picker {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		z-index: 2;
+		opacity: 0;
+		cursor: pointer;
+	}
+	
+	.ant-calendar-range-picker-input {
+		border: none;
+		width: 50%;
+		padding: 0;
+	}
+	
+	.ant-calendar-picker .ant-calendar-range-picker-separator {
+		display: none;
+	}
+}

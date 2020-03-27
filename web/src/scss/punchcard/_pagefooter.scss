@@ -1,0 +1,32 @@
+.page-footer {
+	padding-top: $page-footer-spacer-top;
+	padding-bottom: $page-footer-spacer-bottom;
+	background-color: $page-footer-bg;
+	color: $page-footer-color;
+
+	&-lg {
+		padding-top: $page-footer-spacer-top-lg;
+		padding-bottom: $page-footer-spacer-bottom-lg;
+	}
+
+	&-sm {
+		padding-top: $page-footer-spacer-top-sm;
+		padding-bottom: $page-footer-spacer-bottom-sm;
+	}
+
+	&-brand {
+		@include brand-size(9rem);
+		display: block;
+		margin-top: $input-btn-icon-padding;
+
+		svg {
+			width: 100%;
+		}
+	}
+
+	&-link {
+		display: inline-block;
+		padding-top: $input-btn-icon-padding;
+		padding-bottom: $input-btn-icon-padding;
+	}
+}

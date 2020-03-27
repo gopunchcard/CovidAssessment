@@ -1,0 +1,249 @@
+//////////////////////////////////////////////////
+// Navbar
+//////////////////////////////////////////////////
+
+@include media-breakpoint-down(md) {
+	.nav-open {
+		overflow: hidden;
+	}
+}
+
+.navbar-wrapper {
+	@if $navbar-fixed {
+		@extend .fixed-top;
+	}
+
+	@include media-breakpoint-up(xl) {
+		@if ($navbar-position == map-get($navbar-positions, left) or $navbar-position == map-get($navbar-positions, right)) {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			width: $navbar-side-width;
+			z-index: $zindex-fixed;
+		}
+
+		@if $navbar-position == map-get($navbar-positions, left) {
+			left: 0;
+			right: auto;
+		}
+
+		@if $navbar-position == map-get($navbar-positions, right) {
+			left: auto;
+			right: 0;
+		}
+	}
+}
+
+.navbar {
+	@if $navbar-fixed {
+		height: $navbar-height;
+	}
+
+	@include media-breakpoint-up(xl) {
+		@if $navbar-position == map-get($navbar-positions, top) {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+
+		@if ($navbar-position == map-get($navbar-positions, left) or $navbar-position == map-get($navbar-positions, right)) {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			height: auto;
+			padding: 0;
+		}
+	}
+}
+.subnavbar {
+	// height: $navbar-sub-height;
+	.navbar-nav .nav-link {
+		padding-top: 0.6rem;
+		padding-bottom: 0.6rem;
+	}
+
+	.navbar-nav .no-pointer {
+		pointer-events: none;
+	}
+}
+
+//////////////////////////////////////////////////
+// Collapse Container
+//////////////////////////////////////////////////
+
+@include media-breakpoint-up(lg) {
+	.navbar-collapse {
+		transform: none !important;
+
+		@if ($navbar-position == map-get($navbar-positions, left) or $navbar-position == map-get($navbar-positions, right)) {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			width: 100%;
+			overflow: auto;
+
+			& > * {
+				flex: 0 0 auto;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(md) {
+	.navbar-collapse {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: ($grid-gutter-width * 0.5) 0;
+		z-index: $zindex-fixed;
+		overflow: auto;
+		background-color: $nav-collapse-bg;
+		transition: all $transition-duration-base $transition-bezier;
+
+		&.collapse:not(.show) {
+			display: block;
+			visibility: hidden;
+			transform: translateY(-100%);
+			pointer-events: none;
+		}
+	}
+}
+
+//////////////////////////////////////////////////
+// Mega Nav
+//////////////////////////////////////////////////
+
+@include media-breakpoint-up(xl) {
+	.nav-mega-open {
+		overflow: hidden;
+	}
+
+	.navbar-mega-toggler {
+		position: relative;
+		z-index: $zindex-fixed + 1;
+	}
+
+	.navbar-mega-collapse {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: $grid-gutter-width * 2;
+		z-index: $zindex-fixed;
+		overflow: auto;
+		background-color: #fff;
+
+		&.collapse {
+			display: none;
+		}
+
+		.navbar-nav {
+			flex-wrap: wrap;
+		}
+
+		.nav-item-heading {
+			width: 100%;
+		}
+
+		.nav-heading {
+			padding-bottom: 0;
+		}
+	}
+}
+
+@include media-breakpoint-down(lg) {
+	.navbar-mega-collapse {
+		display: block !important;
+		transform: none !important;
+	}
+}
+
+//////////////////////////////////////////////////
+// Nav Section
+//////////////////////////////////////////////////
+
+@if ($navbar-position == map-get($navbar-positions, left) or $navbar-position == map-get($navbar-positions, right)) {
+	.navbar-nav + .navbar-nav {
+		margin-top: $grid-gutter-width;
+	}
+
+	@include media-breakpoint-up(xl) {
+		.navbar-expand-xl .navbar-nav {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+}
+
+//////////////////////////////////////////////////
+// Nav Links
+//////////////////////////////////////////////////
+
+.nav-heading {
+	display: block;
+	padding: $nav-link-padding-y $nav-link-padding-x;
+	font-weight: $headings-font-weight;
+}
+
+.navbar-nav .nav-link {
+	display: block;
+	position: relative;
+	padding: $nav-link-padding-y $nav-link-padding-x;
+	border: 0;
+	cursor: pointer;
+
+	@include media-breakpoint-up(xl) {
+		display: inline-block;
+
+		.navbar-expand-xl & {
+			padding: $nav-link-padding-y $nav-link-padding-x;
+		}
+	}
+}
+
+//////////////////////////////////////////////////
+// Toggler
+//////////////////////////////////////////////////
+
+.navbar-toggler {
+	border: 0;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+//////////////////////////////////////////////////
+// Nav brands
+//////////////////////////////////////////////////
+
+.navbar-brand {
+	padding: 0;
+	line-height: 1;
+
+	svg {
+		width: 100%;
+	}
+}
+
+.nav-item-brand {
+	display: inline-block;
+	margin-left: $nav-link-padding-x;
+
+	svg {
+		@include brand-size(9rem);
+	}
+}
+
+.navbar-icon {
+	width: $spacer * 1.5;
+	height: $spacer * 1.5;
+}
+
+.navbar-logo {
+	@include brand-size($brand-logo-width);
+	margin-bottom: $grid-gutter-width;
+}

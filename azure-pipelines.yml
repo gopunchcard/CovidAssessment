@@ -1,0 +1,77 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+  serverFolder: 'Server/Server'
+  clientFolder: 'web'
+  applicationName: 'covid-assessment'
+  clientSiteBlobStore: 'covid19assessment'
+  azureSvcConnectionName: 'Covid19 Svc Connection'
+
+stages:
+- stage: build
+  displayName: Build Application
+
+  jobs:
+    - job: build
+      displayName: Build Client
+      steps:
+      - task: UseNode@1
+        inputs:
+          version: '12.16.1'
+
+      - script: yarn
+        displayName: yarn install
+        workingDirectory: $(clientFolder)
+
+      - script: yarn build
+        displayName: yarn build
+        workingDirectory: $(clientFolder)
+
+      - task: CopyFiles@2
+        displayName: copy client build to artifact staging
+        inputs:
+          sourceFolder: '$(clientFolder)/build' 
+          contents: '**/*' 
+          targetFolder: '$(Build.ArtifactStagingDirectory)'
+          cleanTargetFolder: true
+
+      # this code takes all the files in $(Build.ArtifactStagingDirectory) and uploads them as an artifact of your build.
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: '$(applicationName)'
+          publishLocation: 'Container'
+
+- stage: deploy
+  displayName: Deploy to Azure
+
+  jobs:
+    - job: deployClient
+      displayName: Deploy Client Site
+      pool:
+        vmImage: 'windows-latest' # win required for AzureFileCopy@3 task
+      steps:
+
+      # this code downloads the uploaded artifact from the build stage.
+      - task: DownloadBuildArtifacts@0
+        inputs:
+          artifactName: '$(applicationName)'
+          downloadPath: '$(System.ArtifactsDirectory)'
+
+      - task: AzureFileCopy@3
+        inputs:
+          SourcePath: '$(System.ArtifactsDirectory)/$(applicationName)'
+          azureSubscription: '$(azureSvcConnectionName)'
+          Destination: 'AzureBlob'
+          storage: '$(clientSiteBlobStore)'
+          ContainerName: '$web'

@@ -1,0 +1,12 @@
+//////////////////////////////////////////////////
+// Brand logo sizing
+// This is mainly to set a proper width and height
+// for browsers that do not size SVG images
+// correctly (ie. IE).
+//////////////////////////////////////////////////
+
+@mixin brand-size($width) {
+  width: $width;
+  max-width: 100%;
+  height: $width * $brand-aspect-ratio;
+}

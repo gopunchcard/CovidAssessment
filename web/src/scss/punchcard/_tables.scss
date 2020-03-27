@@ -1,0 +1,123 @@
+//////////////////////////////////////////////////
+// Tables
+//////////////////////////////////////////////////
+
+.table {
+	&-layout-fixed {
+		table-layout: fixed;
+	}
+
+	.td {
+		@extend td;
+	}
+
+	%th,
+	thead th {
+		padding-top: $table-head-cell-padding-y;
+		padding-bottom: $table-head-cell-padding-y;
+		border-top: 0;
+		font-size: 0.8rem;
+		font-weight: 700;
+		text-transform: uppercase;
+
+		input {
+			font-size: 1rem;
+		}
+	}
+
+	.interactive {
+		cursor: pointer;
+	}
+
+	tbody th {
+		@extend %th;
+	}
+}
+
+.table-scroll-x {
+	overflow-x: auto;
+	-ms-overflow-style: -ms-autohiding-scrollbar; // See https://github.com/twbs/bootstrap/pull/10057
+	-webkit-overflow-scrolling: touch;
+}
+
+//////////////////////////////////////////////////
+// Table row highlighting
+//////////////////////////////////////////////////
+
+.table-hover tbody tr {
+	transition: background-color $transition-duration-base $transition-bezier;
+}
+
+.tr-empty {
+	opacity: 0.5;
+
+	.table-hover tbody &:hover {
+		background-color: transparent;
+	}
+}
+
+.tr-highlighted {
+	background-color: $table-highlight-bg;
+	color: color-yiq($table-highlight-bg);
+
+	& + & td {
+		border-top: 1px solid $table-highlight-border;
+	}
+
+	.table-hover tbody &:hover {
+		background-color: $table-highlight-bg-hover;
+	}
+}
+
+.tr-invalid {
+	font-weight: 700;
+}
+
+.tr-declined {
+	color: rgba($body-color, 0.5);
+	text-decoration: line-through;
+}
+
+.tr-editing {
+	color: $body-color;
+	font-weight: 400;
+	text-decoration: initial;
+
+	.action-bar,
+	.form-group {
+		margin-bottom: 0;
+	}
+}
+
+.table .tr-link {
+	cursor: pointer;
+}
+
+//////////////////////////////////////////////////
+// Table cell content
+//////////////////////////////////////////////////
+
+.table .td-actions {
+	overflow: visible;
+}
+
+.btn-td {
+	margin: ($table-cell-padding * 0.5) $table-cell-padding;
+	padding-top: $table-cell-padding * 0.5;
+	padding-bottom: $table-cell-padding * 0.5;
+}
+
+.btn-icon-td {
+	height: 100%;
+	padding: $table-icon-padding-y $table-icon-padding-x;
+	background-color: transparent;
+	border: 0;
+	border-radius: 0;
+
+	&:not(:disabled):not(.disabled) {
+		&:focus,
+		&:focus:active {
+			box-shadow: inset $input-btn-focus-box-shadow;
+		}
+	}
+}

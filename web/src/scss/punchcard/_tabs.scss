@@ -1,0 +1,13 @@
+.tab {
+	padding: $tab-padding-y $tab-padding-x;
+
+	@include hover-focus() {
+		background-color: rgba($primary, 0.1);
+		color: $tab-hover-color;
+	}
+
+	&.active {
+		color: $tab-active-color;
+		pointer-events: none;
+	}
+}

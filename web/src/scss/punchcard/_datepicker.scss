@@ -1,0 +1,104 @@
+//////////////////////////////////////////////////
+// Input
+//////////////////////////////////////////////////
+
+.form-group .DayPickerInput {
+	display: block;
+
+	&-Overlay {
+		margin-bottom: $datepicker-spacer * 2;
+		z-index: 5;
+		box-shadow: none;
+	}
+
+	input {
+		@extend .form-control;
+	}
+}
+
+//////////////////////////////////////////////////
+// Datepicker
+//////////////////////////////////////////////////
+
+.form-group .DayPicker {
+	&-wrapper {
+		padding: $datepicker-spacer;
+		border-bottom-left-radius: $card-border-radius;
+		border-bottom-right-radius: $card-border-radius;
+		box-shadow: $card-shadow-hover;
+	}
+
+	&-Month {
+		margin: 0;
+		width: 100%;
+	}
+
+	&-Day {
+		border: 0;
+		font-size: 0.9rem;
+
+		&:hover {
+			background-color: rgba(theme-color(secondary), 0.1);
+		}
+
+		&--today {
+			color: theme-color(primary);
+			font-weight: 700;
+			text-decoration: underline;
+		}
+
+		&--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+			position: relative;
+			z-index: 1;
+			background-color: theme-color(secondary);
+			border-color: theme-color(secondary);
+			box-shadow: $btn-active-box-shadow;
+			transform: scale(1.1);
+		}
+	}
+
+	&-NavBar {
+		top: $datepicker-spacer;
+		right: $datepicker-spacer;
+		left: $datepicker-spacer;
+		padding: 0;
+	}
+
+	&-NavButton {
+		height: $input-height-sm;
+
+		&--prev {
+			left: 0;
+			background-image: $datepicker-prev-bg;
+		}
+
+		&--next {
+			right: 0;
+			background-image: $datepicker-next-bg;
+		}
+	}
+
+	&-Caption {
+		margin-bottom: $datepicker-spacer * 0.75;
+		font-weight: 700;
+
+		.form-control {
+			display: inline-block;
+			width: auto;
+			margin: 0;
+		}
+
+		.form-control + .form-control {
+			margin-left: $spacer * 0.125;
+		}
+	}
+
+	&-TodayButton {
+		@extend .btn;
+		@extend .btn-sm;
+		@extend .btn-outline-primary;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

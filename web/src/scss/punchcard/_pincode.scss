@@ -1,0 +1,98 @@
+.pincode {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; // Todo: Verify this works in IE
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: $body-bg;
+  text-align: center;
+  -webkit-overflow-scrolling: touch;
+
+  &-fields {
+    display: inline-block;
+
+    &.miss {
+      animation: miss 0.6s ease-out 1;
+      color: theme-color(danger);
+    }
+  }
+
+  &-field {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin: 0.5em;
+    border: 1px solid;
+    border-radius: 50%;
+    transition: background-color $transition-duration-base $transition-bezier;
+
+    &.active {
+      background-color: currentColor;
+    }
+  }
+
+  &-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: $pincode-number-size * $pincode-number-cols + $pincode-number-spacer *
+      $pincode-number-cols * 2;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &-number {
+    @extend .btn;
+    @extend .btn-secondary;
+    width: $pincode-number-size;
+    height: $pincode-number-size;
+    margin: $pincode-number-spacer;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 1.5em;
+    line-height: $pincode-number-size;
+
+    &:disabled {
+      opacity: 0.7;
+    }
+  }
+}
+
+@keyframes miss {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-24px, 0);
+  }
+  20% {
+    transform: translate(24px, 0);
+  }
+  30% {
+    transform: translate(-12px, 0);
+  }
+  40% {
+    transform: translate(12px, 0);
+  }
+  50% {
+    transform: translate(-6px, 0);
+  }
+  60% {
+    transform: translate(6px, 0);
+  }
+  70% {
+    transform: translate(-2px, 0);
+  }
+  80% {
+    transform: translate(2px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

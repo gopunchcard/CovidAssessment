@@ -1,0 +1,123 @@
+//////////////////////////////////////////////////
+// Quill toolbar
+//////////////////////////////////////////////////
+
+// Importants are used instead of capturing all of Quill's selectors because there's too many
+
+.form-group .ql-snow.ql-toolbar {
+	border-color: $input-border-color;
+  border-top-right-radius: $input-border-radius;
+  border-top-left-radius: $input-border-radius;
+
+  button:hover,
+  .ql-picker-label:hover {
+    color: theme-color(secondary);
+  }
+
+  .ql-active {
+    background-color: theme-color(secondary);
+    box-shadow: $btn-box-shadow;
+    color: #fff !important;
+  }
+
+  .ql-fill {
+    fill: currentColor !important;
+  }
+
+  .ql-stroke {
+    stroke: currentColor !important;
+	}
+	
+	button svg {
+		width: 100%;
+	}
+}
+
+//////////////////////////////////////////////////
+// Quill editor
+//////////////////////////////////////////////////
+
+.form-group .ql-snow.ql-container {
+	border-color: $input-border-color;
+  border-bottom-right-radius: $input-border-radius;
+  border-bottom-left-radius: $input-border-radius;
+}
+
+.form-group .ql-editor {
+  min-height: 18em;
+	color: $body-color;
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+}
+
+//////////////////////////////////////////////////
+// Quill tooltip
+//////////////////////////////////////////////////
+
+.form-group .ql-snow .ql-tooltip {
+  padding: $spacer;
+  border: 0;
+  border-radius: $card-border-radius;
+  box-shadow: $card-shadow-active;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+
+  > * {
+    vertical-align: middle;
+  }
+
+  &::before {
+    line-height: inherit;
+  }
+
+  &.ql-editing {
+    input[type='text'] {
+      @extend .form-control;
+      display: inline-block;
+      width: 10rem;
+      height: auto;
+      padding: 0 $input-btn-padding-x-sm;
+      line-height: inherit;
+    }
+  }
+
+  .ql-preview {
+    color: $link-color;
+    line-height: inherit;
+    text-decoration: underline;
+
+    &:hover {
+      color: $link-hover-color;
+    }
+  }
+
+  .ql-action,
+  .ql-remove {
+    padding: 0 ($input-btn-padding-x-sm * 1.5);
+    line-height: inherit;
+
+    &::before,
+    &::after {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+  }
+
+  .ql-action {
+    @extend .btn-secondary;
+    margin-left: $spacer * 1.25;
+  }
+
+  .ql-remove {
+    @extend .btn-outline-secondary;
+    margin-left: $spacer / 2;
+  }
+}
+
+.ql-action,
+.ql-remove {
+	@extend .btn;
+}

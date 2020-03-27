@@ -1,0 +1,59 @@
+//////////////////////////////////////////////////
+// Headings
+//////////////////////////////////////////////////
+
+.display-5 {
+  font-size: $display5-size;
+  font-weight: $display5-weight;
+  line-height: $display-line-height;
+}
+
+.display-6 {
+  font-size: $display6-size;
+  font-weight: $display6-weight;
+  line-height: $display-line-height;
+}
+
+.lined-heading {
+  margin-bottom: $spacer * 2;
+  padding-bottom: $spacer / 2;
+  border-bottom: $border;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+//////////////////////////////////////////////////
+// Style helpers
+//////////////////////////////////////////////////
+
+.max-read-width {
+  max-width: $max-read-width;
+}
+
+.strong {
+	font-weight: bolder;
+}
+
+.em {
+	font-style: italic;
+}
+
+.large {
+	font-size: 125%;
+}
+
+.xlarge {
+	font-size: 150%;
+}
+
+.text-break {
+  word-break: break-all;
+}
+
+.text-pre-line {
+  white-space: pre-line;
+}
+
+.reduced-em {
+  opacity: 0.6;
+}

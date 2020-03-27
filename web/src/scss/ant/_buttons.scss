@@ -1,0 +1,19 @@
+//================================================
+//
+// Ant Design Buttons
+//
+//================================================
+
+.ant-btn {
+	@extend .btn;
+	height: auto;
+}
+
+.ant-btn-primary {
+	@extend .btn-primary;
+
+	&:focus {
+		background-color: $primary;
+		border-color: $primary;
+	}
+}
