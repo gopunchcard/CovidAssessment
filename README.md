@@ -1,7 +1,7 @@
 
 
 ## What is the COVID-19 Assessment Framework
-he COVID Assessment Framework provides a web site, Android app, and iOS app to do simple COVID-19 (Novel Coronavirus) pre-screening assessments. The screening is driven by a simple JSON document which allows fast updates and keeps all the applications in sync.
+The COVID Assessment Framework provides a web site, Android app, and iOS app to do simple COVID-19 (Novel Coronavirus) pre-screening assessments. The screening is driven by a simple JSON document which allows fast updates and keeps all the applications in sync.
 
 [See it in action](https://covidassessmentapi.punchcard.dev/)
 
