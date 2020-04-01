@@ -11,16 +11,16 @@ The COVID Assessment Framework provides a web site, Android app, and iOS app to 
 > Key word is test, test, test. But that does not mean “mass testing” because it would be scientifically and logistically useless – WHO deputy director Raniero Guerra explained 
 
 ## Who is this for
-The tool is designed to allow health authorities to quickly create and distribute covid assessments for their jurisdictions.
+The tool is designed to allow health authorities to quickly create and distribute COVID-19 (Coronavirus) assessments for their jurisdictions.
 
 ## Features
- - Simple yes or no quiz engine to provide a recommendation for covid testing
- - Optionally submit covid assessment results with locations data
+ - Simple yes or no quiz engine to provide a recommendation for COVID-19 (Coronavirus) testing
+ - Optionally submit COVID-19 (Coronavirus) assessment results with locations data
  - Web version is easy to embed within an existing site
  - Easy to whitelabel for any jurisdiction
 
 ## How do I get started?
-The framework consists of 2 parts:
+The Framework consists of 2 parts:
 - Mobile App (ReactNative, iOS & Android)
 - Web Application (React)
 
