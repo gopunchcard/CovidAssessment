@@ -11,20 +11,20 @@ import localResults from '../assets/data/results.json';
 
 const path = process.env.REACT_APP_ASSESSMENT_PATH;
 
-const Home: React.FC = ( ) => {
+const Home: React.FC = () => {
 	const [questionId, setQuestionId] = useState<string>("q1");
 	const [questions, setQuestions] = useState<Array<any>>(localQuestions);
 	const [results, setResults] = useState<Array<any>>(localResults);
-    const [responses, setRepsonses] = useState<Array<any>>([]);
-    const [questionChanging, setQuestionChanging] = useState<boolean>(false);
-    const [assessmentSetupPath, setAssessmentSetupPath] = useState<any>(path);
+	const [responses, setRepsonses] = useState<Array<any>>([]);
+	const [questionChanging, setQuestionChanging] = useState<boolean>(false);
+	const [assessmentSetupPath, setAssessmentSetupPath] = useState<any>(path);
 
 	useEffect(() => {
-        DataAPI.getAssessmentSetupData(`${assessmentSetupPath}/questions.json`)
-            .then(data => setQuestions(data));
+		DataAPI.getAssessmentSetupData(`${assessmentSetupPath}/questions.json`)
+			.then(data => setQuestions(data));
 
-        DataAPI.getAssessmentSetupData(`${assessmentSetupPath}/results.json`)
-            .then(data => setResults(data));
+		DataAPI.getAssessmentSetupData(`${assessmentSetupPath}/results.json`)
+			.then(data => setResults(data));
 	}, [assessmentSetupPath]);
 
 	const navigateTo = (newQuestionId: string) => {
@@ -46,46 +46,46 @@ const Home: React.FC = ( ) => {
 			);
 		}
 		setRepsonses(updatedResponses);
-    }
+	}
 
-    const getUserLocation = () => {
-        return new Promise((results, error) => {
-            if (!navigator.geolocation) {
-                console.log("geolocation not supported by browser");
-                return;
-            }
+	const getUserLocation = () => {
+		return new Promise((results, error) => {
+			if (!navigator.geolocation) {
+				console.log("geolocation not supported by browser");
+				return;
+			}
 
-            navigator.geolocation.getCurrentPosition(results, error);
-        });
-    }
+			navigator.geolocation.getCurrentPosition(results, error);
+		});
+	}
 
-    const postResults = (payload: any) => {
-        DataAPI.postAssessmentResults(payload);
-    }
-    
-    const submitResults = (resultId: string) => {
-        const payload = {
-            location: {
-                lat: null,
-                lng: null
-            },
-            responses,
-            result: resultId
-        }
+	const postResults = (payload: any) => {
+		DataAPI.postAssessmentResults(payload);
+	}
 
-        getUserLocation()
-        .then((results: any) => {
-            payload.location.lat = results.coords.latitude;
-            payload.location.lng = results.coords.longitude;
-            postResults(payload);
-        })
-        .catch(() => {
-            console.log("unable to retrieve location");
-            postResults(payload);
-        });
-    }
+	const submitResults = (resultId: string) => {
+		const payload = {
+			location: {
+				lat: null,
+				lng: null
+			},
+			responses,
+			result: resultId
+		}
 
-    const changeQuestion = (questionId: string) => {
+		getUserLocation()
+			.then((results: any) => {
+				payload.location.lat = results.coords.latitude;
+				payload.location.lng = results.coords.longitude;
+				postResults(payload);
+			})
+			.catch(() => {
+				console.log("unable to retrieve location");
+				postResults(payload);
+			});
+	}
+
+	const changeQuestion = (questionId: string) => {
 		setQuestionChanging(true);
 		setTimeout(() => {
 			navigateTo(questionId);
@@ -103,12 +103,12 @@ const Home: React.FC = ( ) => {
 			}
 
 			return (
-                <QuestionCard 
-                    question={currentQuestion} 
-                    nextQuestion={changeQuestion} 
-                    logResponse={logResponse} 
-                />
-            );
+				<QuestionCard
+					question={currentQuestion}
+					nextQuestion={changeQuestion}
+					logResponse={logResponse}
+				/>
+			);
 		}
 		else {
 			let currentResult = results.find(x => x.id === questionId)
@@ -116,15 +116,15 @@ const Home: React.FC = ( ) => {
 			if (currentResult === undefined) {
 				currentResult = results[0];
 				console.warn('Result Not Found');
-            }
+			}
 
-            return (
-                <ResultCard 
-                    navigateTo={changeQuestion} 
-                    result={currentResult} 
-                    submitResults={submitResults}
-                />
-            );
+			return (
+				<ResultCard
+					navigateTo={changeQuestion}
+					result={currentResult}
+					submitResults={submitResults}
+				/>
+			);
 		}
 	}
 
@@ -132,14 +132,16 @@ const Home: React.FC = ( ) => {
 		<Page
 			title='COVID-19 Assessment'
 		>
+			<a className="github-fork-ribbon" href="https://github.com/gopunchcard/CovidAssessment" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
 			<div className="row">
+
 				<div className="col-md-10 col-lg-8 mx-auto">
 					<WordMarkCSA className="mb-4 navbar-logo" />
 					<AnimatePresence>
 						{!questionChanging &&
 							<motion.div
 								initial={{ opacity: 0 }}
-								animate={{  opacity: 1 }}
+								animate={{ opacity: 1 }}
 								transition={{ ease: "easeInOut", duration: Utils.transitionDuration / 1000 }}
 								exit={{ opacity: 0 }}
 							>
@@ -149,6 +151,7 @@ const Home: React.FC = ( ) => {
 					</AnimatePresence>
 				</div>
 			</div>
+
 		</Page>
 	);
 }
